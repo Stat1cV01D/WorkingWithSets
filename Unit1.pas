@@ -153,7 +153,6 @@ begin
 	Result := TSquareList.Create(Comparer);
 	Result.AddRange(Sets[From]);
 
-	// перебираем все множества с одной стороны (по i)
 	for I := 0 to Sets[What].Count - 1 do
 	begin
 		if Result.Contains(Sets[What][I]) then
@@ -222,7 +221,7 @@ begin
 	while True do
 	begin
 
-		for I := miAdd to miDecMul do
+		for I := Low(MenuItems) to High(MenuItems) do
 			Writeln(Integer(I), ' - ', MenuItems[I]);
 
 		readln(MenuItem);
